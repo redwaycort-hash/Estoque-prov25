@@ -1,0 +1,12 @@
+services:
+  estoque-pro:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - estoque_data:/app/data
+    restart: unless-stopped
+volumes:
+  estoque_data:
